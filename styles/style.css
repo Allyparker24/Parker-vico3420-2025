@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+.card {
+    background: #ffa500;
+    padding: 20px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    background: yellow;
+    cursor: pointer;
+}
+
+.spotlight {
+      background: red;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content"></div>
+
+    <script>
+        let items = [
+            ["https://menu.com/turkey.jpg", "Turkey Sandwich"],
+            ["https://menu.com/chicken.jpg", "Chicken Sandwich"],
+            ["https://menu.com/Soda.jpg", "Soda Drink"],
+            ["https://menu.com/Pasta.jpg", "Pasta Salad"],
+            ["https://menu.com/Chips.jpg", "Kettle Chips"],
+        ];
+
+        let contentDiv = document.getElementById("content");
+
+        for (let item of items) { 
+            contentDiv.innerHTML += `<a href="${item[0]}">${item[1]}</a><br>`;
+        }
+    </script>
+    
+</body>
+</html>

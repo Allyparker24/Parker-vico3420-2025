@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an Account</title>
+</head>
+<body>
+    <form id="contactForm" action="" method="get">
+        <div class="formField">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="formField">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="ex: 555-555-5555">
+        </div>
+        <div class="formField">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age">
+        </div>
+        <div class="formField">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div class="formField">
+            <label for="canEmail">Check here if we can send you deals to your email: </label>
+            <input type="checkbox" id="canEmail" name="canEmail">
+        </div>
+        <div class="formField">
+            <label>Preferred Type of Communication: </label><br>
+            <input type="radio" id="phone" name="communicationType" value="phone" checked> 
+            <label for="phone">Phone Number</label><br>
+            <input type="radio" id="email" name="communicationType" value="email"> 
+            <label for="email">Email</label><br>
+        </div>
+        <div class="formField">
+            <label for="how">How did you hear about us?:</label>
+            <select id="how" name="how">
+                <option value="mouth">Word of Mouth</option>
+                <option value="ads" selected>Advertisements</option>
+                <option value="social">Social Media</option>
+            </select>
+        </div>
+        <button type="submit" value="submit" id="submitButton">Submit</button>
+    </form>
+    <script>
+       const queryString = window.location.search;
+
+if (queryString != "") {
+    const urlParams = new URLSearchParams(queryString);
+    console.log(urlParams);
+
+        // Variables for the form values
+        const name = urlParams.get('name');
+        const age = urlParams.get('age');
+        const email = urlParams.get('email');
+        const phone = urlParams.get('phone');
+        const canEmail = urlParams.get('canEmail');
+        const communicationType = urlParams.get('communicationType');
+        const how = urlParams.get('how');
+
+
+        // Show information in the formResults section
+        document.getElementById("formResults").innerHTML = "<p>Form Results:</p>" +
+        "<p>Name: " + name + "</p>" +
+        "<p>Age: " + age + "</p>" + 
+        "<p>Email: " + email + "</p>" + 
+        "<p>Phone: " + phone + "</p>" +
+        "<p>Can email? " + canEmail + "</p>" +
+        "<p>Communication type: " + communicationType + "</p>" +
+        "<p>how: " + how + "</p>" ;
+    }
+    function buttonFunction(event) {
+   event.preventDefault();
+}
+    </script>
+</body>
+</html>

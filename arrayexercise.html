@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Manipulation Example</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .menu-item { font-size: 18px; margin: 10px; }
+        .special { font-weight: bold; color: brown; }
+        .item { padding: 5px; background-color: lightgray; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Brenen's Coffee Cafe</h1>
+    <h2>Our Coffee Menu</h2>
+    <div id="loopDisplay"></div> <!-- Only this div will show the array items with CSS styling -->
+
+    <script>
+        // Create an array with at least 3 values
+        let coffeeMenu = ["Milky Way", "Mocha Latte", "Chocolate Cherry Cordial"];
+
+        // Add at least three values to the array
+        coffeeMenu.push("Americano", "Cappuccino", "Chai Latte");
+
+        // Sort the array
+        coffeeMenu.sort();
+
+        // Remove at least one item (but leave at least one item)
+        coffeeMenu.pop(); // Removes "Chai Latte"
+
+        // Make sure the array has at least three values and display the second item (index 1)
+        // The second item is still being modified but not displayed
+
+        // Modify the array using a function (e.g., .slice())
+        let modifiedMenu = coffeeMenu.slice(0, 3); // Slice the first 3 items
+
+        // Bonus: Display the array using a loop, with items as properties like CSS styling
+        let loopContainer = document.getElementById("loopDisplay");
+        coffeeMenu.forEach((item, index) => {
+            let menuItem = document.createElement("div");
+            menuItem.className = "item";
+            menuItem.innerText = item;
+            menuItem.style.backgroundColor = index % 2 === 0 ? "lightblue" : "lightgreen"; // Alternate background color
+            loopContainer.appendChild(menuItem);
+        });
+    </script>
+</body>
+</html>
